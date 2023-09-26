@@ -1,4 +1,4 @@
-import {AppConfig} from './createAppConfigSlice';
+import { AppConfig } from './createAppConfigSlice';
 
 type DefaultStoreState = {
   appConfig: AppConfig;

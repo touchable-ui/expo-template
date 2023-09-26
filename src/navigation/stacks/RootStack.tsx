@@ -1,11 +1,12 @@
-import {MaterialCommunityIcons} from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import {HomeStack} from './HomeStack';
-import {SettingsStack} from './SettingsStack';
-import {SharedRootStackScreensParamsList} from './SharedRootStackScreens';
+
+import { HomeStack } from './HomeStack';
+import { SettingsStack } from './SettingsStack';
+import { SharedRootStackScreensParamsList } from './SharedRootStackScreens';
 
 export type RootStackParamsList = {
   HomeStack: undefined;
@@ -16,9 +17,9 @@ const Stack = createBottomTabNavigator();
 
 type TabBarIconProps = Parameters<
   NonNullable<BottomTabNavigationOptions['tabBarIcon']>
->[0] & {routeName: keyof RootStackParamsList};
+>[0] & { routeName: keyof RootStackParamsList };
 
-const TabBarIcon = ({color, size, routeName}: TabBarIconProps) => {
+const TabBarIcon = ({ color, size, routeName }: TabBarIconProps) => {
   switch (routeName) {
     case 'SettingsStack':
       return <MaterialCommunityIcons name="cog" color={color} size={size} />;
@@ -38,17 +39,17 @@ export const RootStack = () => {
       <Stack.Screen
         name="HomeStack"
         component={HomeStack}
-        options={({route}) => ({
+        options={({ route }) => ({
           tabBarLabel: 'Home',
-          tabBarIcon: props => TabBarIcon({...props, routeName: route.name}),
+          tabBarIcon: props => TabBarIcon({ ...props, routeName: route.name }),
         })}
       />
       <Stack.Screen
         name="SettingsStack"
         component={SettingsStack}
-        options={({route}) => ({
+        options={({ route }) => ({
           tabBarLabel: 'Settings',
-          tabBarIcon: props => TabBarIcon({...props, routeName: route.name}),
+          tabBarIcon: props => TabBarIcon({ ...props, routeName: route.name }),
         })}
       />
     </Stack.Navigator>

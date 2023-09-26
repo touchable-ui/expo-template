@@ -6,7 +6,7 @@ import { AppConfig } from '../../store/createAppConfigSlice';
 
 interface SettingsScreenProps {}
 
-export const SettingsScreen: React.FC<SettingsScreenProps> = ({}) => {
+export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
   const updateAppConfig = useStore(state => state.updateAppConfig);
   const appConfig = useStore(state => state.appConfig);
 

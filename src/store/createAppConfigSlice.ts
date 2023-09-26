@@ -1,7 +1,6 @@
-import {StoreSlice} from '.';
-import translations from '../localization/translations';
-
+import { StoreSlice } from '.';
 import defaultState from './defaultState';
+import translations from '../localization/translations';
 
 export interface AppConfig {
   language: keyof typeof translations;
@@ -17,5 +16,5 @@ export const createAppConfigSlice: StoreSlice<AppConfigSlice> = (set, get) => ({
     ...defaultState.appConfig,
   },
   updateAppConfig: (appConfig: Partial<AppConfig>) =>
-    set({appConfig: {...get().appConfig, ...appConfig}}),
+    set({ appConfig: { ...get().appConfig, ...appConfig } }),
 });

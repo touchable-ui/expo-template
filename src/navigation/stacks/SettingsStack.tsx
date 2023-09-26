@@ -1,5 +1,6 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SharedRootStackScreens} from './SharedRootStackScreens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { SharedRootStackScreens } from './SharedRootStackScreens';
 
 const Stack = createNativeStackNavigator();
 

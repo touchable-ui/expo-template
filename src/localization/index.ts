@@ -1,5 +1,5 @@
 import * as Localization from 'expo-localization';
-import {I18n, TranslateOptions} from 'i18n-js';
+import { I18n, TranslateOptions } from 'i18n-js';
 
 import translations from './translations';
 

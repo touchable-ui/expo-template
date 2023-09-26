@@ -1,8 +1,8 @@
-import {MMKV} from 'react-native-mmkv';
-import {create, StoreApi} from 'zustand';
-import {createJSONStorage, persist, StateStorage} from 'zustand/middleware';
+import { MMKV } from 'react-native-mmkv';
+import { create, StoreApi } from 'zustand';
+import { createJSONStorage, persist, StateStorage } from 'zustand/middleware';
 
-import {AppConfigSlice, createAppConfigSlice} from './createAppConfigSlice';
+import { AppConfigSlice, createAppConfigSlice } from './createAppConfigSlice';
 
 export const storage = new MMKV();
 
@@ -14,6 +14,7 @@ const zustandStorage: StateStorage = {
   },
   getItem: name => {
     const value = storage.getString(name);
+
     return value ?? null;
   },
   removeItem: name => {
