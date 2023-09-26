@@ -20,4 +20,8 @@ module.exports = {
       },
     },
   ],
+  globals: {
+    __DEV__: true,
+    __dirname: true,
+  },
 };
