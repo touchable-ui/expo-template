@@ -5,7 +5,7 @@ import translations from './translations';
 
 const i18n = new I18n(translations);
 
-export const initLocalization = (language: keyof typeof translations) => {
+export const initialize = (language: keyof typeof translations) => {
   i18n.locale = Localization.locale;
   i18n.enableFallback = true;
   i18n.locale = language;
