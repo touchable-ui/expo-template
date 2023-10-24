@@ -11,6 +11,7 @@ module.exports = {
       'warn',
       { blankLine: 'always', prev: '*', next: 'return' },
     ],
+    'import/order': 'off',
   },
   overrides: [
     {
