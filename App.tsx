@@ -1,12 +1,11 @@
-import { initLocalization } from './src/localization';
+import { initialize as initLocalization } from './src/localization';
 import { Navigation } from './src/navigation/Navigation';
 import { useStore } from './src/store';
 
 export default function App() {
-  const appConfig = useStore(state => state.appConfig);
+  const language = useStore(state => state.appConfig.language);
 
-  // Initialize localization
-  initLocalization(appConfig.language);
+  initLocalization(language);
 
   return <Navigation />;
 }
