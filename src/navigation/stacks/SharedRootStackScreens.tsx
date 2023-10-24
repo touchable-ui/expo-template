@@ -1,6 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { HomeScreen, SettingsScreen } from '../../screens';
+import { HomeScreen, SettingsScreen } from '@screens';
 
 export type SharedRootStackScreensParamsList = {
   HomeScreen: undefined;

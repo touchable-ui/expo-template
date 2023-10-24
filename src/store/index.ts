@@ -38,3 +38,6 @@ export const useStore = create<StoreState>()(
     },
   ),
 );
+
+export type AppConfig = AppConfigSlice['appConfig'];
+export type UpdateAppConfig = AppConfigSlice['updateAppConfig'];

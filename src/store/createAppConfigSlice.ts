@@ -1,8 +1,9 @@
+import { translations } from '@localization';
+
 import { StoreSlice } from '.';
 import defaultState from './defaultState';
-import translations from '../localization/translations';
 
-export interface AppConfig {
+interface AppConfig {
   language: keyof typeof translations;
 }
 

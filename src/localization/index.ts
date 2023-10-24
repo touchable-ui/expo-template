@@ -1,7 +1,12 @@
 import * as Localization from 'expo-localization';
 import { I18n, TranslateOptions } from 'i18n-js';
+import en from './translations/en';
+import es from './translations/es';
 
-import translations from './translations';
+export const translations = {
+  en,
+  es,
+};
 
 const i18n = new I18n(translations);
 

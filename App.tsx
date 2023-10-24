@@ -1,4 +1,5 @@
-import { initialize as initLocalization } from './src/localization';
+import { initialize as initLocalization } from '@localization';
+
 import { Navigation } from './src/navigation/Navigation';
 import { useStore } from './src/store';
 
