@@ -53,5 +53,8 @@
     "url": "https://github.com/touchableui/expo-template/issues"
   },
   "homepage": "https://github.com/touchableui/expo-template#readme",
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": ">=18"
+  }
 }
