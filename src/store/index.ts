@@ -1,43 +1,12 @@
-import { MMKV } from 'react-native-mmkv';
-import { create, StoreApi } from 'zustand';
-import { createJSONStorage, persist, StateStorage } from 'zustand/middleware';
+import { StoreApi } from 'zustand';
 
-import { AppConfigSlice, createAppConfigSlice } from './createAppConfigSlice';
+import { AppConfigSlice } from './createAppConfigSlice';
 
-export const storage = new MMKV();
-
+export * from './createAppConfigSlice';
 export type StoreState = AppConfigSlice;
-
-const zustandStorage: StateStorage = {
-  setItem: (name, value) => {
-    return storage.set(name, value);
-  },
-  getItem: name => {
-    const value = storage.getString(name);
-
-    return value ?? null;
-  },
-  removeItem: name => {
-    return storage.delete(name);
-  },
-};
-
+export type AppConfig = AppConfigSlice['appConfig'];
+export type UpdateAppConfig = AppConfigSlice['updateAppConfig'];
 export type StoreSlice<T> = (
   set: StoreApi<StoreState>['setState'],
   get: StoreApi<StoreState>['getState'],
 ) => T;
-
-export const useStore = create<StoreState>()(
-  persist(
-    (set, get) => ({
-      ...createAppConfigSlice(set, get),
-    }),
-    {
-      name: 'store',
-      storage: createJSONStorage(() => zustandStorage),
-    },
-  ),
-);
-
-export type AppConfig = AppConfigSlice['appConfig'];
-export type UpdateAppConfig = AppConfigSlice['updateAppConfig'];

@@ -1,7 +1,6 @@
 import { Button, Text, View } from 'react-native';
 
-import { useTranslations } from '@hooks';
-import { type AppConfig, useStore } from '@store';
+import { useTranslations, useStore } from '@hooks';
 
 interface SettingsScreenProps {}
 
@@ -10,10 +9,6 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
   const appConfig = useStore(state => state.appConfig);
   const { t } = useTranslations();
 
-  const onChangeLanguage = (language: AppConfig['language']) => {
-    updateAppConfig({ language });
-  };
-
   return (
     <View>
       <Text>
@@ -21,11 +16,11 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
       </Text>
       <Button
         title="Change language to Spanish"
-        onPress={() => onChangeLanguage('es')}
+        onPress={() => updateAppConfig({ language: 'es' })}
       />
       <Button
         title="Change language to English"
-        onPress={() => onChangeLanguage('en')}
+        onPress={() => updateAppConfig({ language: 'en' })}
       />
     </View>
   );
