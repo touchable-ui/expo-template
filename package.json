@@ -43,21 +43,6 @@
     "prettier-eslint": "15.0.1",
     "typescript": "5.1.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/touchableui/expo-template.git"
-  },
-  "author": {
-    "name": "June Domingo",
-    "email": "junedomingo@gmail.com",
-    "url": "https://github.com/junedomingo"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/touchableui/expo-template/issues"
-  },
-  "homepage": "https://github.com/touchableui/expo-template#readme",
-  "description": "A template for Expo projects",
   "engines": {
     "node": ">=18"
   }
