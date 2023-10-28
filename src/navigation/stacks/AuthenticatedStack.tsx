@@ -14,21 +14,8 @@ export type AuthenticatedStackParamList = {
   SettingsScreen: undefined;
 };
 
-const Stack = createBottomTabNavigator();
-
-type TabBarIconProps = Parameters<
-  NonNullable<BottomTabNavigationOptions['tabBarIcon']>
->[0] & { routeName: keyof AuthenticatedStackParamList };
-
-const TabBarIcon = ({ color, size, routeName }: TabBarIconProps) => {
-  switch (routeName) {
-    case 'SettingsStack':
-      return <MaterialCommunityIcons name="cog" color={color} size={size} />;
-
-    default:
-      return <MaterialCommunityIcons name="home" color={color} size={size} />;
-  }
-};
+const Stack =
+  createBottomTabNavigator<StacksOnly<AuthenticatedStackParamList>>();
 
 export const AuthenticatedStack = () => {
   return (
@@ -42,7 +29,9 @@ export const AuthenticatedStack = () => {
         component={HomeStack}
         options={({ route }) => ({
           tabBarLabel: 'Home',
-          tabBarIcon: props => TabBarIcon({ ...props, routeName: route.name }),
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
         })}
       />
       <Stack.Screen
@@ -50,7 +39,9 @@ export const AuthenticatedStack = () => {
         component={SettingsStack}
         options={({ route }) => ({
           tabBarLabel: 'Settings',
-          tabBarIcon: props => TabBarIcon({ ...props, routeName: route.name }),
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="cog" color={color} size={size} />
+          ),
         })}
       />
     </Stack.Navigator>
