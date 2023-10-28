@@ -15,6 +15,7 @@
       "@store": ["store/index"],
       "@types/*": ["types/*"],
       "@utils": ["utils/index"],
+      "src/*": ["src/*"],
     }
   }
 }
