@@ -1,11 +1,15 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import {
-  BottomTabNavigationOptions,
-  createBottomTabNavigator,
-} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HomeStack } from './HomeStack';
 import { SettingsStack } from './SettingsStack';
+
+type StacksOnly<T> = Pick<
+  T,
+  {
+    [K in keyof T]: K extends `${string}Stack${string}` ? K : never;
+  }[keyof T]
+>;
 
 export type AuthenticatedStackParamList = {
   HomeStack: undefined;
