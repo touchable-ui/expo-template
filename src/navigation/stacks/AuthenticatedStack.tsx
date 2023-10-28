@@ -6,12 +6,13 @@ import {
 
 import { HomeStack } from './HomeStack';
 import { SettingsStack } from './SettingsStack';
-import { SharedAuthenticatedStackScreensParamList } from './SharedAuthenticatedStackScreens';
 
 export type AuthenticatedStackParamList = {
   HomeStack: undefined;
   SettingsStack: undefined;
-} & SharedAuthenticatedStackScreensParamList;
+  HomeScreen: undefined;
+  SettingsScreen: undefined;
+};
 
 const Stack = createBottomTabNavigator();
 
