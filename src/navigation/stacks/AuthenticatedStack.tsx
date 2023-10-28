@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HomeStack } from './HomeStack';
 import { SettingsStack } from './SettingsStack';
+import { ProductDetailScreenRouteParams } from '@screens';
 
 type StacksOnly<T> = Pick<
   T,
@@ -16,6 +17,7 @@ export type AuthenticatedStackParamList = {
   SettingsStack: undefined;
   HomeScreen: undefined;
   SettingsScreen: undefined;
+  ProductDetailScreen: ProductDetailScreenRouteParams;
 };
 
 const Stack =
