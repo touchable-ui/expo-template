@@ -6,18 +6,18 @@ import {
 
 import { HomeStack } from './HomeStack';
 import { SettingsStack } from './SettingsStack';
-import { SharedRootStackScreensParamsList } from './SharedRootStackScreens';
+import { SharedAuthenticatedStackScreensParamList } from './SharedAuthenticatedStackScreens';
 
-export type RootStackParamsList = {
+export type AuthenticatedStackParamList = {
   HomeStack: undefined;
   SettingsStack: undefined;
-} & SharedRootStackScreensParamsList;
+} & SharedAuthenticatedStackScreensParamList;
 
 const Stack = createBottomTabNavigator();
 
 type TabBarIconProps = Parameters<
   NonNullable<BottomTabNavigationOptions['tabBarIcon']>
->[0] & { routeName: keyof RootStackParamsList };
+>[0] & { routeName: keyof AuthenticatedStackParamList };
 
 const TabBarIcon = ({ color, size, routeName }: TabBarIconProps) => {
   switch (routeName) {
@@ -29,7 +29,7 @@ const TabBarIcon = ({ color, size, routeName }: TabBarIconProps) => {
   }
 };
 
-export const RootStack = () => {
+export const AuthenticatedStack = () => {
   return (
     <Stack.Navigator
       initialRouteName="HomeStack"

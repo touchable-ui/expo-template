@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 
-import { RootStack } from './stacks';
+import { AuthenticatedStack } from './stacks';
 
 export const Navigation = () => {
   return (
     <NavigationContainer>
-      <RootStack />
+      <AuthenticatedStack />
     </NavigationContainer>
   );
 };

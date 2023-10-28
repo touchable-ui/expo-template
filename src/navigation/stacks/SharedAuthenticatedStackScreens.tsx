@@ -1,14 +1,15 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen, SettingsScreen } from '@screens';
 
-export type SharedRootStackScreensParamsList = {
+export type SharedAuthenticatedStackScreensParamList = {
   HomeScreen: undefined;
   SettingsScreen: undefined;
 };
 
-const Stack = createNativeStackNavigator<SharedRootStackScreensParamsList>();
+const Stack =
+  createNativeStackNavigator<SharedAuthenticatedStackScreensParamList>();
 
-export const SharedRootStackScreens = () => {
+export const SharedAuthenticatedStackScreens = () => {
   return (
     <>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />

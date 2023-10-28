@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { SharedRootStackScreens } from './SharedRootStackScreens';
+import { SharedAuthenticatedStackScreens } from './SharedAuthenticatedStackScreens';
 
 const Stack = createNativeStackNavigator();
 
 export const SettingsStack = () => {
   return (
     <Stack.Navigator initialRouteName="SettingsScreen">
-      {SharedRootStackScreens()}
+      {SharedAuthenticatedStackScreens()}
     </Stack.Navigator>
   );
 };
