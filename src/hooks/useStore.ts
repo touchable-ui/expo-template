@@ -1,24 +1,8 @@
-import { MMKV } from 'react-native-mmkv';
 import { create } from 'zustand';
-import { createJSONStorage, persist, StateStorage } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
-import { type StoreState, createAppConfigSlice } from '@store';
-
-export const storage = new MMKV();
-
-const zustandStorage: StateStorage = {
-  setItem: (name, value) => {
-    return storage.set(name, value);
-  },
-  getItem: name => {
-    const value = storage.getString(name);
-
-    return value ?? null;
-  },
-  removeItem: name => {
-    return storage.delete(name);
-  },
-};
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createAppConfigSlice, type StoreState } from '@store';
 
 export const useStore = create<StoreState>()(
   persist(
@@ -27,7 +11,7 @@ export const useStore = create<StoreState>()(
     }),
     {
       name: 'store',
-      storage: createJSONStorage(() => zustandStorage),
+      storage: createJSONStorage(() => AsyncStorage),
     },
   ),
 );
