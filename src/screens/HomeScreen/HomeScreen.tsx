@@ -13,7 +13,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 
   return (
     <View>
-      <Button onPress={() => navigation.navigate('HomeStack')}>
+      <Button onPress={() => navigation.navigate('SettingsStack')}>
         Go to{t('settings')}
       </Button>
     </View>
