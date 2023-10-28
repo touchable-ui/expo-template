@@ -5,6 +5,7 @@ import defaultState from './defaultState';
 
 interface AppConfig {
   language: keyof typeof translations;
+  theme: 'dark' | 'light';
 }
 
 export interface AppConfigSlice {

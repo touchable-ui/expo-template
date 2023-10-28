@@ -7,5 +7,6 @@ type DefaultStoreState = {
 export default {
   appConfig: {
     language: 'en',
+    theme: 'light',
   },
 } as DefaultStoreState;
