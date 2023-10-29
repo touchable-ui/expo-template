@@ -39,3 +39,5 @@ yarn-error.*
 # Prebuild
 android/
 ios/
+
+.vscode/

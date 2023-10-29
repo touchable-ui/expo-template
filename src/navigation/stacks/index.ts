@@ -1,3 +1,3 @@
 export * from './HomeStack';
-export * from './RootStack';
+export * from './AuthenticatedStack';
 export * from './SettingsStack';

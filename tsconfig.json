@@ -13,7 +13,7 @@
       "@navigation/stacks": ["navigation/stacks/index"],
       "@screens": ["screens/index"],
       "@store": ["store/index"],
-      "@types/*": ["types/*"],
+      "@types": ["types/index"],
       "@utils": ["utils/index"],
       "src/*": ["src/*"],
     }
