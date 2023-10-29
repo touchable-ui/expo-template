@@ -9,7 +9,6 @@ This is a template for Expo projects. It includes the following:
 - [React Navigation](https://reactnavigation.org/)
 - [Expo localization](https://docs.expo.dev/versions/latest/sdk/localization/)
 - [Zustand](https://github.com/pmndrs/zustand)
-- [React Native MMKV Storage](https://github.com/mrousavy/react-native-mmkv)
 - [Tamagui](https://tamagui.dev/)
 
 ### Prerequisites
