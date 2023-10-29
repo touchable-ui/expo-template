@@ -23,7 +23,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         Go to{t('settings')}
       </Button>
       <Button
-        onPress={() => navigation.navigate('ProductDetailScreen', product)}>
+        onPress={() => navigation.navigate('ProductDetailScreen', { product })}>
         Open product
       </Button>
     </View>

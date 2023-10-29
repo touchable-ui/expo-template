@@ -9,14 +9,18 @@ interface ProductDetailScreenProps
     'ProductDetailScreen'
   > {}
 
-export interface ProductDetailScreenRouteParams extends Product {}
+export interface ProductDetailScreenRouteParams {
+  product: Product;
+}
 
 export const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({
   route,
 }) => {
+  const { product } = route.params;
+
   return (
     <Stack>
-      <Text>Product name: {route.params.name}</Text>
+      <Text>Product name: {product.name}</Text>
     </Stack>
   );
 };

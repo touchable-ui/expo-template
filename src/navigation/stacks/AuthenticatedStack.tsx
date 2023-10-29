@@ -1,27 +1,18 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { KeysContain } from '@types';
 import { HomeStack } from './HomeStack';
 import { SettingsStack } from './SettingsStack';
-import { ProductDetailScreenRouteParams } from '@screens';
-
-type StacksOnly<T> = Pick<
-  T,
-  {
-    [K in keyof T]: K extends `${string}Stack${string}` ? K : never;
-  }[keyof T]
->;
+import { AuthenticatedStackSharedScreensParamList } from './StacksSharedScreens';
 
 export type AuthenticatedStackParamList = {
   HomeStack: undefined;
   SettingsStack: undefined;
-  HomeScreen: undefined;
-  SettingsScreen: undefined;
-  ProductDetailScreen: ProductDetailScreenRouteParams;
-};
+} & AuthenticatedStackSharedScreensParamList;
 
 const Stack =
-  createBottomTabNavigator<StacksOnly<AuthenticatedStackParamList>>();
+  createBottomTabNavigator<KeysContain<AuthenticatedStackParamList, 'Stack'>>();
 
 export const AuthenticatedStack = () => {
   return (
@@ -33,7 +24,7 @@ export const AuthenticatedStack = () => {
       <Stack.Screen
         name="HomeStack"
         component={HomeStack}
-        options={({ route }) => ({
+        options={() => ({
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -43,7 +34,7 @@ export const AuthenticatedStack = () => {
       <Stack.Screen
         name="SettingsStack"
         component={SettingsStack}
-        options={({ route }) => ({
+        options={() => ({
           tabBarLabel: 'Settings',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="cog" color={color} size={size} />

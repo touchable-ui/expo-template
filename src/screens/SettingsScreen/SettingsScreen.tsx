@@ -15,6 +15,11 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
   const updateAppConfig = useStore(state => state.updateAppConfig);
   const appConfig = useStore(state => state.appConfig);
 
+  const product = {
+    id: 1,
+    name: 'Product 1',
+  };
+
   return (
     <Stack>
       <Text textAlign="center" fontWeight="bold">
@@ -32,6 +37,11 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
 
       <Button onPress={() => navigation.navigate('HomeStack')}>
         Go to Home stack
+      </Button>
+
+      <Button
+        onPress={() => navigation.navigate('ProductDetailScreen', { product })}>
+        Go to Product
       </Button>
     </Stack>
   );
