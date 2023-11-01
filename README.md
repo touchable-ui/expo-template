@@ -1,5 +1,7 @@
 # Expo Template
 
+> A template for Expo projects
+
 ## Getting Started
 
 This is a template for Expo projects. It includes the following:
